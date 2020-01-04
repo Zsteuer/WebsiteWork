@@ -20,9 +20,11 @@
   display: inline-block;
 }
 .bridgeBetweenSections{
-  position: absolute;
+  position: relative;
   text-align:center;
   top: 75px;
+  max-width: 1080px;
+  margin: 0px auto;
 }
 .bridgeBetweenSections span{
   background-color: white;
