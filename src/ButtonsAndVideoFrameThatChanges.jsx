@@ -41,9 +41,7 @@ class ButtonsAndVideoFrameThatChanges extends Component{
                     </div>
                 </div>
                 <div className="bridgeBetweenSections">
-                    <div>
-                        <h3><span>Welcome to my music site. Click the buttons above to get started! If you were looking for a software engineering portfolio (including the source code for this site) check out: <a href="https://github.com/Zsteuer">https://github.com/Zsteuer</a></span></h3>
-                    </div>
+                        <h3>Welcome to my music site. Click the buttons above to get started! If you were looking for a software engineering portfolio (including the source code for this site) check out: <a href="https://github.com/Zsteuer">https://github.com/Zsteuer</a></h3>
                 </div>
                 <div className="secondInTwo">
                     {this.state.shouldBeHidden? null: <ButtonWithIframe text="Close embedded page" variant="danger" onClickFunc={() => this.hideEmbeddedPage() }/> }
