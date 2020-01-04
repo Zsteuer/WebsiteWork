@@ -25,16 +25,19 @@ class ButtonsAndVideoFrameThatChanges extends Component{
                         <ButtonWithIframe text="bandcamp" variant="warning" onClickFunc={() => this.changeiFrameDiaplay("http://zakbullet.bandcamp.com") }/>
                     </div>
                     <div className="inline">
-                        <ButtonWithIframe text="blog" variant="warning" onClickFunc={() => this.changeiFrameDiaplay("http://zakbullet.wordpress.com") }/>
+                        <ButtonWithIframe text="blog" variant="dark" onClickFunc={() => this.changeiFrameDiaplay("http://zakbullet.wordpress.com") }/>
                     </div>
                     <div className="inline">
                         <ButtonWithIframe text="solo guitar" variant="warning" onClickFunc={() => this.changeiFrameDiaplay("http://www.youtube.com/embed/47QNJBAYXDw") }/>
                     </div>
                     <div className="inline">
-                        <ButtonWithIframe text="Soundtrack" variant="warning" onClickFunc={() => this.changeiFrameDiaplay("https://vlare.tv/embed/F47YyFjm/false/true/0") }/>
+                        <ButtonWithIframe text="Soundtrack" variant="dark" onClickFunc={() => this.changeiFrameDiaplay("https://vlare.tv/embed/F47YyFjm/false/true/0") }/>
                     </div>
                     <div className="inline">
                         <ButtonWithIframe text="Sound Design Pedagogy" variant="warning" onClickFunc={() => this.changeiFrameDiaplay("http://www.youtube.com/embed/P6pmyqCv8sQ") }/>
+                    </div>
+                    <div className="inline">
+                        <ButtonWithIframe text="DJing with live guitar loops" variant="dark" onClickFunc={() => this.changeiFrameDiaplay("http://www.youtube.com/embed/r4QoZywqcL4") }/>
                     </div>
                 </div>
                 <div className="bridgeBetweenSections">
