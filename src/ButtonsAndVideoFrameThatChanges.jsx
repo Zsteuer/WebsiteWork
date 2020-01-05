@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ButtonWithIframe from "./ButtonWithIframe";
 import Iframe from 'react-iframe';
+import SocialMediaToolbar from "./SocialMediaToolbar";
 
 class ButtonsAndVideoFrameThatChanges extends Component{
     constructor(props){
@@ -20,6 +21,7 @@ class ButtonsAndVideoFrameThatChanges extends Component{
     render(){
         return(
             <div>
+                <SocialMediaToolbar className='floatontop'/>
                 <div className="firstInTwoCentered">
                     <div className="inline">
                         <ButtonWithIframe text="bandcamp" variant="warning" onClickFunc={() => this.changeiFrameDiaplay("http://zakbullet.bandcamp.com") }/>

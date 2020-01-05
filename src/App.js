@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import ButtonsAndVideoFrameThatChanges from "./ButtonsAndVideoFrameThatChanges";
+import ButtonsAndVideoFrameThatChanges from "./ButtonsAndVideoFrameThatChanges"
 
 function App() {
   return (
