@@ -5,7 +5,7 @@ import ButtonsAndVideoFrameThatChanges from "./ButtonsAndVideoFrameThatChanges"
 function App() {
   return (
     <div className="App">
-        <ButtonsAndVideoFrameThatChanges/>
+        <ButtonsAndVideoFrameThatChanges className="App-overflow"/>
     </div>
   );
 }

@@ -2,10 +2,17 @@
   text-align: center;
   background-color: #dff2f7;
   background-image: url('./zblogosoftblue.png');
-  height: 1000px;
+  min-height: 1000px;
+  height: auto !important;
   background-position: top center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-overflow {
+  background: #dff2f7;
 }
 
 .embedded-bandcamp{
@@ -48,6 +55,12 @@
   justify-content: space-between;
   height: 500px;
   position: fixed;
+}
+
+.makerows{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .floatontop{

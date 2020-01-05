@@ -2,12 +2,17 @@ import React, { Component } from 'react';
 import ButtonWithIframe from "./ButtonWithIframe";
 import Iframe from 'react-iframe';
 import SocialMediaToolbar from "./SocialMediaToolbar";
+import Button from "react-bootstrap/Button";
+import Modal from "react-modal";
 
 class ButtonsAndVideoFrameThatChanges extends Component{
     constructor(props){
         super(props);
-        this.state = {shouldBeHidden: true,
-            urlToDisplayInFrame: "http://www.wikipedia.org"};
+        this.state = {
+            shouldBeHidden: true,
+            urlToDisplayInFrame: "http://www.wikipedia.org",
+            showAboutMeModal: false,
+            showContactModal: false};
     }
 
     changeiFrameDiaplay  = (newUrl) => {
@@ -52,6 +57,15 @@ class ButtonsAndVideoFrameThatChanges extends Component{
                     <div>
                         {this.state.shouldBeHidden? null : <Iframe url={this.state.urlToDisplayInFrame}
                         width="1080px" height="720px" display="initial" position="relative"/> }
+                    </div>
+                </div>
+                <div className = "secondInTwo">
+                    <div className = 'makerows'>
+                        <div></div>
+                        <Button variant="success" size="lg">About Me</Button>
+                        <div></div>
+                        <Button variant="success" size="lg">Contact</Button>
+                        <div></div>
                     </div>
                 </div>
             </div>
