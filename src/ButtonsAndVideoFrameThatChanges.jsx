@@ -15,6 +15,22 @@ class ButtonsAndVideoFrameThatChanges extends Component{
             showContactModal: false};
     }
 
+    openAboutMeModel = () =>{
+        this.setState({showAboutMeModal: true});
+    }
+
+    closeAboutMeModal = () =>{
+        this.setState({showAboutMeModal: false});
+    }
+
+    openContactModal = () => {
+        this.setState({showContactModal : true});
+    }
+
+    closeContactModal = () => {
+        this.setState({showContactModal: false});
+    }
+
     changeiFrameDiaplay  = (newUrl) => {
         this.setState({urlToDisplayInFrame: newUrl, shouldBeHidden: false});
     }
@@ -27,6 +43,28 @@ class ButtonsAndVideoFrameThatChanges extends Component{
         return(
             <div>
                 <SocialMediaToolbar className='floatontop'/>
+                <Modal
+                    isOpen={this.state.showAboutMeModal}
+                    onRequestClose={() => this.closeAboutMeModal()}
+                    contentLabel="About Me Modal"
+                    ariaHideApp={false}
+                    className="modal-style"
+                > <div className="modal-text">
+                    I'm a guitarist and electronic musician who has played in rock and jazz bands my entire life. My 2017 album, <a href="https://zakbullet.bandcamp.com/album/introducing-zak-bullet-2018-remasters"> "Introducing Zak Bullet," </a> was programmed, written, recorded, and mixed by me. I also wrote some of the music for EbenFrosty's cartoon adaptation of his comic series <a href="https://vlare.tv/v/F47YyFjm"> "Mashstache." </a> In addition to jazz and classical solo guitar performances (usually billed as Zach Steuer), I also have a <a href="https://www.youtube.com/watch?v=r4QoZywqcL4">show</a> that combines DJing with live guitar loops in Ableton (usually billed as Zak Bullet). I am a triple-major in math, computer science, and music in college and will start work as a software developer this Summer after graduation.
+                </div> </Modal>
+                <Modal
+                    isOpen={this.state.showContactModal}
+                    onRequestClose={() => this.closeContactModal()}
+                    contentLabel="Contact Modal"
+                    ariaHideApp={false}
+                    className="modal-style"
+                > <div className="modal-text">
+                    Email: <a href="mailto:zakbulletofficial@gmail.com"> ZakBulletOfficial@Gmail.com </a> <br/>
+                    Facebook: <a href="https://www.facebook.com/ZakBulletMusic/"> www.facebook.com/ZakBulletMusic </a> <br/>
+                    Bandcamp: <a href="http://zakbullet.bandcamp.com"> zakbullet.bandcamp.com </a><br/>
+                    Snapchat: zachsteuer <br/>
+                    Instagram: <a href="https://www.instagram.com/zachsteuerpa/"> zachsteuerPA </a> <br/>
+                    tiktok: <a href ="https://www.tiktok.com/@thezakbullet"> thezakbullet</a></div> </Modal>
                 <div className="firstInTwoCentered">
                     <div className="inline">
                         <ButtonWithIframe text="bandcamp" variant="warning" onClickFunc={() => this.changeiFrameDiaplay("http://zakbullet.bandcamp.com") }/>
@@ -62,9 +100,9 @@ class ButtonsAndVideoFrameThatChanges extends Component{
                 <div className = "secondInTwo">
                     <div className = 'makerows'>
                         <div></div>
-                        <Button variant="success" size="lg">About Me</Button>
+                        <Button variant="success" size="lg" onClick={() => this.openAboutMeModel()}>About Me</Button>
                         <div></div>
-                        <Button variant="success" size="lg">Contact</Button>
+                        <Button variant="success" size="lg" onClick={() => this.openContactModal()}>Contact</Button>
                         <div></div>
                     </div>
                 </div>
