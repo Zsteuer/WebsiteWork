@@ -4,6 +4,7 @@ import Iframe from 'react-iframe';
 import SocialMediaToolbar from "./SocialMediaToolbar";
 import Button from "react-bootstrap/Button";
 import Modal from "react-modal";
+import ModalHeader from 'react-bootstrap/ModalHeader';
 
 class ButtonsAndVideoFrameThatChanges extends Component{
     constructor(props){
@@ -49,16 +50,20 @@ class ButtonsAndVideoFrameThatChanges extends Component{
                     contentLabel="About Me Modal"
                     ariaHideApp={false}
                     className="modal-style"
-                > <div className="modal-text">
+                >
+                    <ModalHeader closeButton onHide={() => this.closeAboutMeModal()}/>
+                    <div className="modal-text">
                     I'm a guitarist and electronic musician who has played in rock and jazz bands my entire life. My 2017 album, <a href="https://zakbullet.bandcamp.com/album/introducing-zak-bullet-2018-remasters"> "Introducing Zak Bullet," </a> was programmed, written, recorded, and mixed by me. I also wrote some of the music for EbenFrosty's cartoon adaptation of his comic series <a href="https://vlare.tv/v/F47YyFjm"> "Mashstache." </a> In addition to jazz and classical solo guitar performances (usually billed as Zach Steuer), I also have a <a href="https://www.youtube.com/watch?v=r4QoZywqcL4">show</a> that combines DJing with live guitar loops in Ableton (usually billed as Zak Bullet). I am a triple-major in math, computer science, and music in college and will start work as a software developer this Summer after graduation.
-                </div> </Modal>
+                    </div> </Modal>
                 <Modal
                     isOpen={this.state.showContactModal}
                     onRequestClose={() => this.closeContactModal()}
                     contentLabel="Contact Modal"
                     ariaHideApp={false}
                     className="modal-style"
-                > <div className="modal-text">
+                >
+                    <ModalHeader closeButton onHide={() => this.closeContactModal()}/>
+                    <div className="modal-text">
                     Email: <a href="mailto:zakbulletofficial@gmail.com"> ZakBulletOfficial@Gmail.com </a> <br/>
                     Facebook: <a href="https://www.facebook.com/ZakBulletMusic/"> www.facebook.com/ZakBulletMusic </a> <br/>
                     Bandcamp: <a href="http://zakbullet.bandcamp.com"> zakbullet.bandcamp.com </a><br/>
