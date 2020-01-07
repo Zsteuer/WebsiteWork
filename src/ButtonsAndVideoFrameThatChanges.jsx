@@ -53,7 +53,8 @@ class ButtonsAndVideoFrameThatChanges extends Component{
                 >
                     <ModalHeader closeButton onHide={() => this.closeAboutMeModal()}/>
                     <div className="modal-text">
-                    I'm a guitarist and electronic musician who has played in rock and jazz bands my entire life. My 2017 album, <a href="https://zakbullet.bandcamp.com/album/introducing-zak-bullet-2018-remasters"> "Introducing Zak Bullet," </a> was programmed, written, recorded, and mixed by me. I also wrote some of the music for EbenFrosty's cartoon adaptation of his comic series <a href="https://vlare.tv/v/F47YyFjm"> "Mashstache." </a> In addition to jazz and classical solo guitar performances (usually billed as Zach Steuer), I also have a <a href="https://www.youtube.com/watch?v=r4QoZywqcL4">show</a> that combines DJing with live guitar loops in Ableton (usually billed as Zak Bullet). I am a triple-major in math, computer science, and music in college and will start work as a software developer this Summer after graduation.
+                        <h3>About Me</h3>
+                        I'm a guitarist and electronic musician who has played in rock and jazz bands my entire life. My 2017 album, <a href="https://zakbullet.bandcamp.com/album/introducing-zak-bullet-2018-remasters"> "Introducing Zak Bullet," </a> was programmed, written, recorded, and mixed by me. I also wrote some of the music for EbenFrosty's cartoon adaptation of his comic series <a href="https://vlare.tv/v/F47YyFjm"> "Mashstache." </a> In addition to jazz and classical solo guitar performances (usually billed as Zach Steuer), I also have a <a href="https://www.youtube.com/watch?v=r4QoZywqcL4">show</a> that combines DJing with live guitar loops in Ableton (usually billed as Zak Bullet). I am a triple-major in math, computer science, and music in college and will start work as a software developer this Summer after graduation.
                     </div> </Modal>
                 <Modal
                     isOpen={this.state.showContactModal}
@@ -64,12 +65,13 @@ class ButtonsAndVideoFrameThatChanges extends Component{
                 >
                     <ModalHeader closeButton onHide={() => this.closeContactModal()}/>
                     <div className="modal-text">
-                    Email: <a href="mailto:zakbulletofficial@gmail.com"> ZakBulletOfficial@Gmail.com </a> <br/>
-                    Facebook: <a href="https://www.facebook.com/ZakBulletMusic/"> www.facebook.com/ZakBulletMusic </a> <br/>
-                    Bandcamp: <a href="http://zakbullet.bandcamp.com"> zakbullet.bandcamp.com </a><br/>
-                    Snapchat: zachsteuer <br/>
-                    Instagram: <a href="https://www.instagram.com/zachsteuerpa/"> zachsteuerPA </a> <br/>
-                    tiktok: <a href ="https://www.tiktok.com/@thezakbullet"> thezakbullet</a></div> </Modal>
+                        <h3>Contact</h3>
+                        Email: <a href="mailto:zakbulletofficial@gmail.com"> ZakBulletOfficial@Gmail.com </a> <br/>
+                        Facebook: <a href="https://www.facebook.com/ZakBulletMusic/"> www.facebook.com/ZakBulletMusic </a> <br/>
+                        Bandcamp: <a href="http://zakbullet.bandcamp.com"> zakbullet.bandcamp.com </a><br/>
+                        Snapchat: zachsteuer <br/>
+                        Instagram: <a href="https://www.instagram.com/zachsteuerpa/"> zachsteuerPA </a> <br/>
+                        tiktok: <a href ="https://www.tiktok.com/@thezakbullet"> thezakbullet</a></div> </Modal>
                 <div className="firstInTwoCentered">
                     <div className="inline">
                         <ButtonWithIframe text="bandcamp" variant="warning" onClickFunc={() => this.changeiFrameDiaplay("http://zakbullet.bandcamp.com") }/>
