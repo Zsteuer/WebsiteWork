@@ -16,12 +16,35 @@
   background: #dff2f7;
 }
 
+.close-button-mobile-wrapper{
+  /* Note: this is identical to another, badly name wrapper.
+  TODO: cleanup
+   */
+  text-align: center;
+}
+
+.close-button-mobile{
+  /*display:flex;
+  justify-content: center; */
+  display: inline-block;
+}
+
 .modal-style{
   position: absolute;
   top: 50%;
   left: 50%;
   width: 50%;
   height: 50%;
+  transform: translate(-50%, -50%) !important;
+  background: #dff2f7;
+}
+
+.modal-mobile-style{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
   transform: translate(-50%, -50%) !important;
   background: #dff2f7;
 }
@@ -50,9 +73,23 @@
   background-color: white;
 }
 
+.mobileBridgeBetweenSections{
+  position: relative;
+  text-align:center;
+  top: 66vw;
+  max-width: 1080px;
+  margin: 0px auto;
+  background-color: white;
+}
+
 .secondInTwo{
   position: relative;
   top: 100px;
+}
+
+.secondInTwoMobile{
+  position: relative;
+  top: 75vw;
 }
 
 .hidden{
@@ -76,7 +113,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  width: 100%;
 }
+
 
 .floatontop{
   z-index: 10;
