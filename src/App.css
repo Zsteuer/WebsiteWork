@@ -3,6 +3,7 @@
   background-color: #dff2f7;
   background-image: url('./zblogosoftblue.png');
   min-height: 1000px;
+  background-size: 66%; /* just enough so logo takes up screen (720/1080 = 2/3) */
   height: auto !important;
   background-position: top center;
   background-repeat: no-repeat;
@@ -30,8 +31,8 @@
 }
 
 .embedded-bandcamp{
-  width: 500px;
-  height: 500px;
+  width: 500px; /* (500/1080) */
+  height: 500px; /* (500/720) */
 }
 
 .firstInTwoCentered{
