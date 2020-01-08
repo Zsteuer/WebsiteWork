@@ -5,6 +5,13 @@ import SocialMediaToolbar from "./SocialMediaToolbar";
 import Button from "react-bootstrap/Button";
 import Modal from "react-modal";
 import ModalHeader from 'react-bootstrap/ModalHeader';
+import {
+    BrowserView,
+    MobileView,
+    isBrowser,
+    isMobile
+} from 'react-device-detect';
+import { AppBar, Toolbar } from '@material-ui/core';
 
 class ButtonsAndVideoFrameThatChanges extends Component{
     constructor(props){
@@ -41,9 +48,19 @@ class ButtonsAndVideoFrameThatChanges extends Component{
     }
 
     render(){
+        console.log(isMobile);
         return(
             <div>
-                <SocialMediaToolbar className='floatontop'/>
+                <BrowserView>
+                 <SocialMediaToolbar className='floatontop'/>
+                </BrowserView>
+                <MobileView>
+                    <AppBar top="auto" bottom="0">
+                        <Toolbar>
+                            <div>hi</div>
+                        </Toolbar>
+                    </AppBar>
+                </MobileView>
                 <Modal
                     isOpen={this.state.showAboutMeModal}
                     onRequestClose={() => this.closeAboutMeModal()}
@@ -73,27 +90,29 @@ class ButtonsAndVideoFrameThatChanges extends Component{
                         Instagram: <a href="https://www.instagram.com/zachsteuerpa/"> zachsteuerPA </a> <br/>
                         tiktok: <a href ="https://www.tiktok.com/@thezakbullet"> thezakbullet</a></div> </Modal>
                 <div className="firstInTwoCentered">
-                    <div className="inline">
-                        <ButtonWithIframe text="bandcamp" variant="warning" onClickFunc={() => this.changeiFrameDiaplay("http://zakbullet.bandcamp.com") }/>
-                    </div>
-                    <div className="inline">
-                        <ButtonWithIframe text="blog" variant="dark" onClickFunc={() => this.changeiFrameDiaplay("http://zakbullet.wordpress.com") }/>
-                    </div>
-                    <div className="inline">
-                        <ButtonWithIframe text="solo guitar" variant="warning" onClickFunc={() => this.changeiFrameDiaplay("http://www.youtube.com/embed/47QNJBAYXDw") }/>
-                    </div>
-                    <div className="inline">
+                    <BrowserView>
+                      <div className="inline">
+                         <ButtonWithIframe text="bandcamp" variant="warning" onClickFunc={() => this.changeiFrameDiaplay("http://zakbullet.bandcamp.com") }/>
+                      </div>
+                     <div className="inline">
+                         <ButtonWithIframe text="blog" variant="dark" onClickFunc={() => this.changeiFrameDiaplay("http://zakbullet.wordpress.com") }/>
+                        </div>
+                        <div className="inline">
+                         <ButtonWithIframe text="solo guitar" variant="warning" onClickFunc={() => this.changeiFrameDiaplay("http://www.youtube.com/embed/47QNJBAYXDw") }/>
+                        </div>
+                     <div className="inline">
                         <ButtonWithIframe text="Soundtrack" variant="dark" onClickFunc={() => this.changeiFrameDiaplay("https://vlare.tv/embed/F47YyFjm/false/true/0") }/>
-                    </div>
+                     </div>
                     <div className="inline">
                         <ButtonWithIframe text="Sound Design Pedagogy" variant="warning" onClickFunc={() => this.changeiFrameDiaplay("http://www.youtube.com/embed/P6pmyqCv8sQ") }/>
                     </div>
                     <div className="inline">
                         <ButtonWithIframe text="DJing with live guitar loops" variant="dark" onClickFunc={() => this.changeiFrameDiaplay("http://www.youtube.com/embed/r4QoZywqcL4") }/>
                     </div>
+                    </BrowserView>
                 </div>
                 <div className="bridgeBetweenSections">
-                        <h3>Welcome to my music site. Click the buttons above to get started! If you were looking for a software engineering portfolio (including the source code for this site) check out: <a href="https://github.com/Zsteuer">https://github.com/Zsteuer</a></h3>
+                        <h3>Welcome to my music site. Click the {isMobile ? "toolbar" : "buttons"} above to get started! If you were looking for a software engineering portfolio (including the source code for this site) check out: <a href="https://github.com/Zsteuer">https://github.com/Zsteuer</a></h3>
                 </div>
                 <div className="secondInTwo">
                     {this.state.shouldBeHidden? null: <ButtonWithIframe text="Close embedded page" variant="danger" onClickFunc={() => this.hideEmbeddedPage() }/> }
