@@ -5,7 +5,7 @@
   background-image: url('./zblogosoftblue.png');
   min-height: 138.89vh; /* 1000/720, used to fit to other screen sizes*/
   background-size: 50%; /* just enough so logo takes up screen*/
-  height: auto;
+  height: 100%;
   background-position: top center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -92,6 +92,7 @@
   max-width: 1080px;
   margin: 0px auto;
   background-color: white;
+  padding-bottom: 1px;
 }
 
 .mobileBridgeBetweenSections{
@@ -101,6 +102,7 @@
   max-width: 1080px;
   margin: 0px auto;
   background-color: white;
+  padding-bottom: 1px;
 }
 
 .secondInTwo{
