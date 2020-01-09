@@ -165,6 +165,7 @@ class ButtonsAndVideoFrameThatChanges extends Component{
                         <div></div>
                     </div>
                 </div>
+                <div clear='both'></div>
             </div>
         )
     }

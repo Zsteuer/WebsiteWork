@@ -5,7 +5,7 @@
   background-image: url('./zblogosoftblue.png');
   min-height: 138.89vh; /* 1000/720, used to fit to other screen sizes*/
   background-size: 50%; /* just enough so logo takes up screen*/
-  height: auto !important;
+  height: auto;
   background-position: top center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -25,7 +25,7 @@
    I really don't like*/
   min-height: 138.89vh; /* 1000/720, used to fit to other screen sizes*/
   background-size: 50%; /* just enough so logo takes up screen*/
-  height: auto !important;
+  height: auto;
   background-position: top center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -139,5 +139,5 @@
 
 
 .floatontop{
-  z-index: 10;
+  z-index: -10;
 }

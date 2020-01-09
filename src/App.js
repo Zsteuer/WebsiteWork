@@ -5,8 +5,10 @@ import { isMobile } from 'react-device-detect';
 
 function App() {
   return (
+      <div background-color="#dff2f7" background-repeat="repeat-y" z-index="-99999">
       <div className={isMobile ? "App-mobile" : "App"}>
           <ButtonsAndVideoFrameThatChanges className="App-overflow"/>
+      </div>
       </div>
   );
 }
