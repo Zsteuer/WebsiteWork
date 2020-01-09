@@ -5,10 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #dff2f7 !important;
-  /*I tried to get around the important tag, but when the app expands,
-  one of the components sometimes overflows. Setting the background of that
-  obscures other elements, and setting the app's overflow to auto gives us an ugly scroll bar.*/
 }
 
 code {

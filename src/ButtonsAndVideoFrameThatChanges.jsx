@@ -91,11 +91,11 @@ class ButtonsAndVideoFrameThatChanges extends Component{
                         this Summer after graduation.
                     </div>
                     <div  className="close-button-mobile-wrapper">
-                    <MobileView>
+                     <MobileView>
                         <div className="inline"> </div>
                         <Button className="inline" onClick={() => this.closeAboutMeModal()} variant="danger">close</Button>
                         <div className="inline"></div>
-                    </MobileView>
+                     </MobileView>
                     </div>
                 </Modal>
                 <Modal
@@ -106,7 +106,7 @@ class ButtonsAndVideoFrameThatChanges extends Component{
                     className={isMobile? "modal-mobile-style" : "modal-style"}
                 >
                     <ModalHeader closeButton onHide={() => this.closeContactModal()}/>
-                    <div className="modal-text">
+                     <div className="modal-text">
                         <h3>Contact</h3>
                         Email: <a href="mailto:zakbulletofficial@gmail.com"> ZakBulletOfficial@Gmail.com </a> <br/>
                         Facebook: <a href="https://www.facebook.com/ZakBulletMusic/"> www.facebook.com/ZakBulletMusic </a> <br/>
@@ -114,7 +114,7 @@ class ButtonsAndVideoFrameThatChanges extends Component{
                         Snapchat: zachsteuer <br/>
                         Instagram: <a href="https://www.instagram.com/zachsteuerpa/"> zachsteuerPA </a> <br/>
                         tiktok: <a href ="https://www.tiktok.com/@thezakbullet"> thezakbullet</a></div>
-                    <div  className="close-button-mobile-wrapper">
+                     <div  className="close-button-mobile-wrapper">
                         <MobileView>
                             <div className="inline"> </div>
                             <Button className="inline" onClick={() => this.closeContactModal()} variant="danger">close</Button>
@@ -127,9 +127,9 @@ class ButtonsAndVideoFrameThatChanges extends Component{
                       <div className="inline">
                          <ButtonWithIframe text="bandcamp" variant="warning" onClickFunc={() => this.changeiFrameDiaplay("http://zakbullet.bandcamp.com") }/>
                       </div>
-                     <div className="inline">
+                      <div className="inline">
                          <ButtonWithIframe text="blog" variant="dark" onClickFunc={() => this.changeiFrameDiaplay("http://zakbullet.wordpress.com") }/>
-                        </div>
+                      </div>
                         <div className="inline">
                          <ButtonWithIframe text="solo guitar" variant="warning" onClickFunc={() => this.changeiFrameDiaplay("http://www.youtube.com/embed/47QNJBAYXDw") }/>
                         </div>
@@ -148,16 +148,16 @@ class ButtonsAndVideoFrameThatChanges extends Component{
                         <h3>Welcome to my music site. Click the buttons {isMobile ? "below" : "above"} to get started! If you were looking for a software engineering portfolio (including the source code for this site) check out: <a href="https://github.com/Zsteuer">https://github.com/Zsteuer</a></h3>
                 </div>
                 <div className="secondInTwo">
-                    {this.state.shouldBeHidden? null: <ButtonWithIframe text="Close embedded page" variant="danger" onClickFunc={() => this.hideEmbeddedPage() }/> }
-                </div>
-                <div className="secondInTwo">
                     <div>
+                        <div>
+                            {this.state.shouldBeHidden? null: <ButtonWithIframe text="Close embedded page" variant="danger" onClickFunc={() => this.hideEmbeddedPage() }/> }
+                        </div>
                         {this.state.shouldBeHidden? null : <Iframe url={this.state.urlToDisplayInFrame}
                         width="1080px" height="720px" display="initial" position="relative"/> }
                     </div>
                 </div>
                 <div className = {isMobile? "secondInTwoMobile" : "secondInTwo"} >
-                    <div className = 'makerows'>
+                    <div className = 'makerows' position="relative">
                         <div></div>
                         <Button variant="success" size="lg" onClick={() => this.openAboutMeModel()}>About Me</Button>
                         <div></div>
