@@ -56,7 +56,7 @@ class ButtonsAndVideoFrameThatChanges extends Component{
                  <SocialMediaToolbar className='floatontop'/>
                 </BrowserView>
                 <MobileView>
-                    <AppBar top="auto" bottom="0" style={{ backgroundColor: '#90ee90' }} position="sticky">
+                    <AppBar top="auto" bottom="0" style={{ backgroundColor: '#90ee90' }}>
                         <Toolbar left="0" right="0">
                             <ul className="makerows">
                                 <SocialIcon url="https://www.facebook.com/ZakBulletMusic/" network="facebook"/>

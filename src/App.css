@@ -1,9 +1,30 @@
 .App {
   text-align: center;
   background-color: #dff2f7;
+  /*background-color: #000000; */
   background-image: url('./zblogosoftblue.png');
   min-height: 138.89vh; /* 1000/720, used to fit to other screen sizes*/
-  background-size: 66%; /* just enough so logo takes up screen (720/1080 = 2/3) */
+  background-size: 50%; /* just enough so logo takes up screen*/
+  height: auto !important;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-mobile{
+  text-align: center;
+  background-color: #dff2f7;
+  /*background-color: #000000; */
+  background-image: url('./zblogosoftblue.png');
+  background-position-y: 55px !important;
+  /*Since react for now doesn't support passing !important in as a string,
+   the most logical thing is to make this its own style. The other option
+   is to define the style in a js file and use setProperty, which
+   I really don't like*/
+  min-height: 138.89vh; /* 1000/720, used to fit to other screen sizes*/
+  background-size: 50%; /* just enough so logo takes up screen*/
   height: auto !important;
   background-position: top center;
   background-repeat: no-repeat;
