@@ -1,7 +1,6 @@
 .App {
   text-align: center;
   background-color: #dff2f7;
-  /*background-color: #000000; */
   background-image: url('./zblogosoftblue.png');
   min-height: 138.89vh; /* 1000/720, used to fit to other screen sizes*/
   background-size: 50%; /* just enough so logo takes up screen*/
@@ -16,7 +15,6 @@
 .App-mobile{
   text-align: center;
   background-color: #dff2f7;
-  /*background-color: #000000; */
   background-image: url('./zblogosoftblue.png');
   background-position-y: 55px !important;
   /*Since react for now doesn't support passing !important in as a string,
@@ -31,6 +29,15 @@
   background-attachment: fixed;
   display: flex;
   flex-direction: column;
+}
+
+.header {
+  background: #90ee90;
+  height: 48px;
+  width: 100%;
+  top: 0%;
+  position: fixed;
+  overflow: hidden;
 }
 
 .App-overflow {
@@ -138,7 +145,6 @@
   justify-content: space-between;
   width: 100%;
 }
-
 
 .floatontop{
   z-index: -10;

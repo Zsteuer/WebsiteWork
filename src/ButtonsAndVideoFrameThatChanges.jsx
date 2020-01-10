@@ -11,7 +11,7 @@ import {
     isBrowser,
     isMobile
 } from 'react-device-detect';
-import { AppBar, Toolbar } from '@material-ui/core';
+import { AppBar, Toolbar} from '@material-ui/core';
 import {SocialIcon} from "react-social-icons";
 
 class ButtonsAndVideoFrameThatChanges extends Component{
@@ -56,17 +56,17 @@ class ButtonsAndVideoFrameThatChanges extends Component{
                  <SocialMediaToolbar className='floatontop'/>
                 </BrowserView>
                 <MobileView>
-                    <AppBar top="auto" bottom="0" style={{ backgroundColor: '#90ee90' }}>
-                        <Toolbar left="0" right="0">
-                            <ul className="makerows">
-                                <SocialIcon url="https://www.facebook.com/ZakBulletMusic/" network="facebook"/>
-                                <SocialIcon url="https://www.youtube.com/channel/UCne9pab0S3txRE_e3PM-hdg" network="youtube"/>
-                                <SocialIcon url="https://www.instagram.com/zachsteuerpa/" network="instagram"/>
-                                <SocialIcon url="mailto:zakbulletofficial@gmail.com" network="email"/>
-                                <div></div>
-                         </ul>
-                        </Toolbar>
-                    </AppBar>
+                    <div className="header" style={{ backgroundColor: '#90ee90' }}>
+                                <div className="makerows" style={{ padding: '6px' }}>
+                                    {/* "header" has fixed 48px */}
+                                    <div/>
+                                    <SocialIcon url="https://www.facebook.com/ZakBulletMusic/" network="facebook" style={{ height: 36, width: 36 }}/>
+                                    <SocialIcon url="https://www.youtube.com/channel/UCne9pab0S3txRE_e3PM-hdg" network="youtube" style={{ height: 36, width: 36 }}/>
+                                    <SocialIcon url="https://www.instagram.com/zachsteuerpa/" network="instagram" style={{ height: 36, width: 36 }}/>
+                                    <SocialIcon url="mailto:zakbulletofficial@gmail.com" network="email" style={{ height: 36, width: 36 }}/>
+                                    <div/>
+                                </div>
+                    </div>
                 </MobileView>
                 <Modal
                     isOpen={this.state.showAboutMeModal}
@@ -93,7 +93,7 @@ class ButtonsAndVideoFrameThatChanges extends Component{
                     <div  className="close-button-mobile-wrapper">
                      <MobileView>
                         <div className="inline"> </div>
-                        <Button className="inline" onClick={() => this.closeAboutMeModal()} variant="danger">close</Button>
+                        <Button className="inline" onClick={() => this.closeAboutMeModal()} variant="danger">Close</Button>
                         <div className="inline"></div>
                      </MobileView>
                     </div>
@@ -117,7 +117,7 @@ class ButtonsAndVideoFrameThatChanges extends Component{
                      <div  className="close-button-mobile-wrapper">
                         <MobileView>
                             <div className="inline"> </div>
-                            <Button className="inline" onClick={() => this.closeContactModal()} variant="danger">close</Button>
+                            <Button className="inline" onClick={() => this.closeContactModal()} variant="danger">Close</Button>
                             <div className="inline"></div>
                         </MobileView>
                     </div>
