@@ -58,7 +58,8 @@ constructor(props){
             showAboutMeModal: false,
             showContactModal: false,
             mobileMenuOpen: false,
-            mobileMenuText: defaultMobileMenuText};
+            mobileMenuText: defaultMobileMenuText,
+            anchorEl: null};
     }
 
     openAboutMeModel = () =>{
@@ -93,6 +94,11 @@ constructor(props){
         this.setState({mobileMenuOpen: false});
     }
 
+    menuOpenClick = event => {
+        this.setState({ anchorEl: event.currentTarget });
+        this.openMobileMenu();
+    };
+
     handleMobileMenuOptions = (option) =>{
         this.setState(
             {
@@ -116,14 +122,14 @@ constructor(props){
         const desktopButtons = [];
         let desktopButtonNum = 0;
         for (const e of Object.keys(MenuOptions)){
-            desktopButtons.push(<div className="inline">
+            desktopButtons.push(<div className="inline" key={MenuOptions[e].title}>
                 <ButtonWithIframe text={MenuOptions[e].title} variant={desktopButtonNum % 2 == 0 ? "warning" : "dark"} onClickFunc={() => this.changeiFrameDiaplay(MenuOptions[e].desktopUrl) }/>
         </div>)
             desktopButtonNum++;
         }
         const mobileMenuOptions = [];
         for (const e of Object.keys(MenuOptions)){
-            mobileMenuOptions.push(<MenuItem onClick={() => this.handleMobileMenuOptions(MenuOptions[e])}>
+            mobileMenuOptions.push(<MenuItem onClick={() => this.handleMobileMenuOptions(MenuOptions[e])} key={MenuOptions[e].title}>
                 {MenuOptions[e].title}
             </MenuItem>)
         }
@@ -152,7 +158,9 @@ constructor(props){
                     ariaHideApp={false}
                     className={isMobile? "modal-mobile-style" : "modal-style"}
                 >
-                    <ModalHeader closeButton onHide={() => this.closeAboutMeModal()}/>
+                    <ModalHeader closeButton onHide={() => this.closeAboutMeModal()}
+                                 style={isMobile ? {height: "48px"} : null}/>
+                    {/* if it is, we hide it under the top toolbar */}
                     <div className="modal-text">
                         <h3>About Me</h3>
                         I'm a guitarist and electronic musician who has played in rock and jazz bands my entire life. My 2017 album,
@@ -182,7 +190,9 @@ constructor(props){
                     ariaHideApp={false}
                     className={isMobile? "modal-mobile-style" : "modal-style"}
                 >
-                    <ModalHeader closeButton onHide={() => this.closeContactModal()}/>
+                        <ModalHeader closeButton onHide={() => this.closeContactModal()}
+                                     style={isMobile ? {height: "48px"} : null}/>
+                        {/* if it is, we hide it under the top toolbar */}
                      <div className="modal-text">
                         <h3>Contact</h3>
                         Email: <a href="mailto:zakbulletofficial@gmail.com"> ZakBulletOfficial@Gmail.com </a> <br/>
@@ -228,7 +238,7 @@ constructor(props){
                     </div>
                 </div>
                 <MobileView>
-                    <Button id="openMobileMenuButton" className="secondInTwo" variant="dark" size="lg" style={{ marginTop : "25px", marginBottom: "0px"}} onClick={() => this.openMobileMenu()}>{this.state.mobileMenuText}
+                    <Button id="openMobileMenuButton" className="secondInTwo" variant="dark" size="lg" style={{ marginTop : "25px", marginBottom: "0px"}} onClick={this.menuOpenClick}>{this.state.mobileMenuText}
                     </Button>
                     <div className="secondInTwo" style={{ marginTop : "0px"}}>
                         <div>
@@ -236,6 +246,12 @@ constructor(props){
                             id="simple-menu"
                             open={this.state.mobileMenuOpen}
                             onClose={() => this.closeMobileMenu()}
+                            anchorEl={this.state.anchorEl}
+                            getContentAnchorEl={null}
+                            anchorOrigin={{
+                                vertical: 'bottom',
+                                horizontal: 'center',
+                            }}
                         >
                             {mobileMenuOptions}
                             <MenuItem onClick={() => this.resetMobileOptions()}>Close</MenuItem>
