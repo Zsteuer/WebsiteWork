@@ -91,7 +91,14 @@ constructor(props){
     }
 
     render(){
-        console.log(isMobile);
+        const desktopButtons = [];
+        let desktopButtonNum = 0;
+        for (const e of Object.keys(MenuOptions)){
+            desktopButtons.push(<div className="inline">
+                <ButtonWithIframe text={MenuOptions[e].title} variant={desktopButtonNum % 2 == 0 ? "warning" : "dark"} onClickFunc={() => this.changeiFrameDiaplay(MenuOptions[e].desktopUrl) }/>
+        </div>)
+            desktopButtonNum++;
+        }
         return(
             <div>
                 <BrowserView>
@@ -166,24 +173,7 @@ constructor(props){
                 </Modal>
                 <div className="firstInTwoCentered">
                     <BrowserView>
-                      <div className="inline">
-                         <ButtonWithIframe text={MenuOptions.BANDCAMP.title} variant="warning" onClickFunc={() => this.changeiFrameDiaplay(MenuOptions.BANDCAMP.desktopUrl) }/>
-                      </div>
-                      <div className="inline">
-                         <ButtonWithIframe text={MenuOptions.WORDPRESS.title} variant="dark" onClickFunc={() => this.changeiFrameDiaplay(MenuOptions.WORDPRESS.desktopUrl) }/>
-                      </div>
-                        <div className="inline">
-                         <ButtonWithIframe text={MenuOptions.YOUTUBESOLOGUITAR.title} variant="warning" onClickFunc={() => this.changeiFrameDiaplay(MenuOptions.YOUTUBESOLOGUITAR.desktopUrl) }/>
-                        </div>
-                     <div className="inline">
-                        <ButtonWithIframe text={MenuOptions.VIMEOSOUNDTRACK.title} variant="dark" onClickFunc={() => this.changeiFrameDiaplay(MenuOptions.VIMEOSOUNDTRACK.desktopUrl) }/>
-                     </div>
-                    <div className="inline">
-                        <ButtonWithIframe text={MenuOptions.YOUTUBESOUNDDESIGN.title} variant="warning" onClickFunc={() => this.changeiFrameDiaplay(MenuOptions.YOUTUBESOUNDDESIGN.desktopUrl) }/>
-                    </div>
-                    <div className="inline">
-                        <ButtonWithIframe text={MenuOptions.YOUTUBELIVESHOW.title} variant="dark" onClickFunc={() => this.changeiFrameDiaplay(MenuOptions.YOUTUBELIVESHOW.desktopUrl) }/>
-                    </div>
+                        {desktopButtons}
                     </BrowserView>
                 </div>
                 <div className={isMobile? "mobileBridgeBetweenSections" : "bridgeBetweenSections"}>
