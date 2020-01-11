@@ -11,17 +11,32 @@ import {
     isBrowser,
     isMobile
 } from 'react-device-detect';
-import { AppBar, Toolbar} from '@material-ui/core';
+import { Menu, MenuItem} from '@material-ui/core';
 import {SocialIcon} from "react-social-icons";
 
+const MenuOptions = { // I realized I'd have to make a row of buttons for desktop and a dropdown for mobile
+    BANDCAMP: {title: "bandcamp",
+        desktopUrl: "http://zakbullet.bandcamp.com",
+        mobileUrl: "http://zakbullet.bandcamp.com"},
+    WORDPRESS: {
+        title: "blog",
+        desktopUrl: "http://zakbullet.wordpress.com",
+        mobileUrl: "http://zakbullet.wordpress.com"
+    }
+
+}
+
 class ButtonsAndVideoFrameThatChanges extends Component{
-    constructor(props){
+
+constructor(props){
         super(props);
         this.state = {
             shouldBeHidden: true,
             urlToDisplayInFrame: "http://www.wikipedia.org",
             showAboutMeModal: false,
-            showContactModal: false};
+            showContactModal: false,
+            mobileMenuOpen: false,
+            showMobileEmbeddedSite: false};
     }
 
     openAboutMeModel = () =>{
@@ -46,6 +61,14 @@ class ButtonsAndVideoFrameThatChanges extends Component{
 
     hideEmbeddedPage = () =>{
         this.setState({shouldBeHidden: true});
+    }
+
+    openMobileMenu = () =>{
+        this.setState({mobileMenuOpen: true});
+    }
+
+    closeMobileMenu = () =>{
+        this.setState({mobileMenuOpen: false});
     }
 
     render(){
@@ -125,7 +148,7 @@ class ButtonsAndVideoFrameThatChanges extends Component{
                 <div className="firstInTwoCentered">
                     <BrowserView>
                       <div className="inline">
-                         <ButtonWithIframe text="bandcamp" variant="warning" onClickFunc={() => this.changeiFrameDiaplay("http://zakbullet.bandcamp.com") }/>
+                         <ButtonWithIframe text={MenuOptions.BANDCAMP.title} variant="warning" onClickFunc={() => this.changeiFrameDiaplay(MenuOptions.BANDCAMP.desktopUrl) }/>
                       </div>
                       <div className="inline">
                          <ButtonWithIframe text="blog" variant="dark" onClickFunc={() => this.changeiFrameDiaplay("http://zakbullet.wordpress.com") }/>
@@ -165,6 +188,21 @@ class ButtonsAndVideoFrameThatChanges extends Component{
                         <div></div>
                     </div>
                 </div>
+                <MobileView>
+                    <Button className="secondInTwo" variant="dark" size="lg" style={{ marginTop : "25px"}} onClick={() => this.openMobileMenu()}>Choose one
+                    </Button>
+                    <div className="secondInTwo">
+                        <Menu
+                            id="simple-menu"
+                            open={this.state.mobileMenuOpen}
+                            onClose={() => this.closeMobileMenu()}
+                        >
+                            <MenuItem>Profile</MenuItem>
+                            <MenuItem>My account</MenuItem>
+                            <MenuItem>Logout</MenuItem>
+                        </Menu>
+                    </div>
+                </MobileView>
             </div>
         )
     }
