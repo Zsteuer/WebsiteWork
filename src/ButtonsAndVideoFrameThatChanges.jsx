@@ -22,8 +22,27 @@ const MenuOptions = { // I realized I'd have to make a row of buttons for deskto
         title: "blog",
         desktopUrl: "http://zakbullet.wordpress.com",
         mobileUrl: "http://zakbullet.wordpress.com"
+    },
+    YOUTUBESOLOGUITAR:{
+        title: "solo guitar",
+        desktopUrl: "http://www.youtube.com/embed/47QNJBAYXDw",
+        mobileUrl: "https://www.youtube.com/watch?v=47QNJBAYXDw",
+    },
+    VIMEOSOUNDTRACK:{
+        title: "Soundtrack",
+        desktopUrl: "https://vlare.tv/embed/F47YyFjm/false/true/0",
+        mobileUrl: "https://vlare.tv/v/F47YyFjm"
+    },
+    YOUTUBESOUNDDESIGN: {
+        title: "Sound Design Pedagogy",
+        desktopUrl: "http://www.youtube.com/embed/P6pmyqCv8sQ",
+        mobileUrl: "https://www.youtube.com/watch?v=P6pmyqCv8sQ",
+    },
+    YOUTUBELIVESHOW: {
+        title: "DJing with live guitar loops",
+        desktopUrl: "http://www.youtube.com/embed/r4QoZywqcL4",
+        mobileUrl: "https://www.youtube.com/watch?v=r4QoZywqcL4"
     }
-
 }
 
 class ButtonsAndVideoFrameThatChanges extends Component{
@@ -151,19 +170,19 @@ constructor(props){
                          <ButtonWithIframe text={MenuOptions.BANDCAMP.title} variant="warning" onClickFunc={() => this.changeiFrameDiaplay(MenuOptions.BANDCAMP.desktopUrl) }/>
                       </div>
                       <div className="inline">
-                         <ButtonWithIframe text="blog" variant="dark" onClickFunc={() => this.changeiFrameDiaplay("http://zakbullet.wordpress.com") }/>
+                         <ButtonWithIframe text={MenuOptions.WORDPRESS.title} variant="dark" onClickFunc={() => this.changeiFrameDiaplay(MenuOptions.WORDPRESS.desktopUrl) }/>
                       </div>
                         <div className="inline">
-                         <ButtonWithIframe text="solo guitar" variant="warning" onClickFunc={() => this.changeiFrameDiaplay("http://www.youtube.com/embed/47QNJBAYXDw") }/>
+                         <ButtonWithIframe text={MenuOptions.YOUTUBESOLOGUITAR.title} variant="warning" onClickFunc={() => this.changeiFrameDiaplay(MenuOptions.YOUTUBESOLOGUITAR.desktopUrl) }/>
                         </div>
                      <div className="inline">
-                        <ButtonWithIframe text="Soundtrack" variant="dark" onClickFunc={() => this.changeiFrameDiaplay("https://vlare.tv/embed/F47YyFjm/false/true/0") }/>
+                        <ButtonWithIframe text={MenuOptions.VIMEOSOUNDTRACK.title} variant="dark" onClickFunc={() => this.changeiFrameDiaplay(MenuOptions.VIMEOSOUNDTRACK.desktopUrl) }/>
                      </div>
                     <div className="inline">
-                        <ButtonWithIframe text="Sound Design Pedagogy" variant="warning" onClickFunc={() => this.changeiFrameDiaplay("http://www.youtube.com/embed/P6pmyqCv8sQ") }/>
+                        <ButtonWithIframe text={MenuOptions.YOUTUBESOUNDDESIGN.title} variant="warning" onClickFunc={() => this.changeiFrameDiaplay(MenuOptions.YOUTUBESOUNDDESIGN.desktopUrl) }/>
                     </div>
                     <div className="inline">
-                        <ButtonWithIframe text="DJing with live guitar loops" variant="dark" onClickFunc={() => this.changeiFrameDiaplay("http://www.youtube.com/embed/r4QoZywqcL4") }/>
+                        <ButtonWithIframe text={MenuOptions.YOUTUBELIVESHOW.title} variant="dark" onClickFunc={() => this.changeiFrameDiaplay(MenuOptions.YOUTUBELIVESHOW.desktopUrl) }/>
                     </div>
                     </BrowserView>
                 </div>
