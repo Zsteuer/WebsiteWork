@@ -17,17 +17,17 @@ import {SocialIcon} from "react-social-icons";
 const MenuOptions = { // I realized I'd have to make a row of buttons for desktop and a dropdown for mobile
     BANDCAMP: {
         title: "bandcamp",
-        desktopUrl: "http://zakbullet.bandcamp.com",
-        mobileUrl: "http://zakbullet.bandcamp.com"},
+        desktopUrl: "https://zakbullet.bandcamp.com",
+        mobileUrl: "https://zakbullet.bandcamp.com"},
     WORDPRESS: {
         title: "blog",
-        desktopUrl: "http://zakbullet.wordpress.com",
-        mobileUrl: "http://zakbullet.wordpress.com"
+        desktopUrl: "https://zakbullet.wordpress.com",
+        mobileUrl: "https://zakbullet.wordpress.com"
     },
     YOUTUBESOLOGUITAR:{
         title: "solo guitar",
-        desktopUrl: "http://www.youtube.com/embed/47QNJBAYXDw",
-        mobileUrl: "http://www.youtube.com/embed/47QNJBAYXDw",
+        desktopUrl: "https://www.youtube.com/embed/47QNJBAYXDw",
+        mobileUrl: "https://www.youtube.com/embed/47QNJBAYXDw",
     },
     VIMEOSOUNDTRACK:{
         title: "Soundtrack",
@@ -36,13 +36,13 @@ const MenuOptions = { // I realized I'd have to make a row of buttons for deskto
     },
     YOUTUBESOUNDDESIGN: {
         title: "Sound Design Pedagogy",
-        desktopUrl: "http://www.youtube.com/embed/P6pmyqCv8sQ",
-        mobileUrl: "http://www.youtube.com/embed/P6pmyqCv8sQ",
+        desktopUrl: "https://www.youtube.com/embed/P6pmyqCv8sQ",
+        mobileUrl: "https://www.youtube.com/embed/P6pmyqCv8sQ",
     },
     YOUTUBELIVESHOW: {
         title: "DJing with live guitar loops",
-        desktopUrl: "http://www.youtube.com/embed/r4QoZywqcL4",
-        mobileUrl: "http://www.youtube.com/embed/r4QoZywqcL4"
+        desktopUrl: "https://www.youtube.com/embed/r4QoZywqcL4",
+        mobileUrl: "https://www.youtube.com/embed/r4QoZywqcL4"
     }
 }
 
