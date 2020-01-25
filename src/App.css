@@ -72,8 +72,10 @@
   left: 50%;
   width: 50%;
   min-height: 50%;
+  max-height: calc(100% - 96px); /* 2*48 for the bottom toolbar */
   transform: translate(-50%, -50%) !important;
   background: #dff2f7;
+  overflow: auto;
 }
 
 .modal-mobile-style{
