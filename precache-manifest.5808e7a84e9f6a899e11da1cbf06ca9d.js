@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "040648c5460645f640530e6d864b3678",
+    "revision": "1e3cc0b2110aeae2293c8ed40b84acee",
     "url": "/WebsiteWork/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/WebsiteWork/static/css/2.17e5ed98.chunk.css"
   },
   {
-    "revision": "27d4782e214d1d6480dc",
+    "revision": "ff70ebae654814c45c1a",
     "url": "/WebsiteWork/static/css/main.e79d629f.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/WebsiteWork/static/js/2.7911f633.chunk.js.LICENSE"
   },
   {
-    "revision": "27d4782e214d1d6480dc",
-    "url": "/WebsiteWork/static/js/main.531fa329.chunk.js"
+    "revision": "ff70ebae654814c45c1a",
+    "url": "/WebsiteWork/static/js/main.61c92f26.chunk.js"
   },
   {
     "revision": "0f20ca6699a9227d3fc5",
