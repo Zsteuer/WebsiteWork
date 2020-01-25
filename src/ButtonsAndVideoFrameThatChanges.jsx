@@ -109,6 +109,19 @@ constructor(props){
            });
     }
 
+    areElementsColliding = (e1, e2) =>{
+        // Inspired by https://stackoverflow.com/questions/12066870/how-to-check-if-an-element-is-overlapping-other-elements
+        var rect1 = e1.getBoundingClientRect();
+        var rect2 = e2.getBoundingClientRect();
+
+        return !(
+            rect1.top > rect2.bottom ||
+            rect1.right < rect2.left ||
+            rect1.bottom < rect2.top ||
+            rect1.left > rect2.right
+        );
+    }
+
     resetMobileOptions = () =>{
         this.setState({
             shouldBeHidden: true,
@@ -136,7 +149,18 @@ constructor(props){
         return(
             <div>
                 <BrowserView>
-                 <SocialMediaToolbar className='floatontop'/>
+                    {/* <SocialMediaToolbar className='floatontop'/> */}
+                    <div className="footer" style={{ backgroundColor: '#90ee90', zIndex: 9999 }}>
+                        <div className="makerows" style={{ padding: '6px' }}>
+                            {/* "footer" has fixed 48px */}
+                            <div/>
+                            <SocialIcon url="https://www.facebook.com/ZakBulletMusic/" network="facebook" style={{ height: 36, width: 36 }}/>
+                            <SocialIcon url="https://www.youtube.com/channel/UCne9pab0S3txRE_e3PM-hdg" network="youtube" style={{ height: 36, width: 36 }}/>
+                            <SocialIcon url="https://www.instagram.com/zachsteuerpa/" network="instagram" style={{ height: 36, width: 36 }}/>
+                            <SocialIcon url="mailto:zakbulletofficial@gmail.com" network="email" style={{ height: 36, width: 36 }}/>
+                            <div/>
+                        </div>
+                    </div>
                 </BrowserView>
                 <MobileView>
                     <div className="header" style={{ backgroundColor: '#90ee90', zIndex: 9999 }}>
@@ -237,6 +261,10 @@ constructor(props){
                         <div></div>
                     </div>
                 </div>
+                <BrowserView>
+                    <div className="secondInTwo" height="96px"/>
+                    {/* padding for the toolbar */}
+                </BrowserView>
                 <MobileView>
                     <Button id="openMobileMenuButton" className="secondInTwo" variant="dark" size="lg" style={{ marginTop : "25px", marginBottom: "0px"}} onClick={this.menuOpenClick}>{this.state.mobileMenuText}
                     </Button>

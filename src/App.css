@@ -40,6 +40,15 @@
   overflow: hidden;
 }
 
+.footer{
+  background: #90ee90;
+  height: 48px;
+  width: 100%;
+  bottom: 0%;
+  position: fixed;
+  overflow: hidden;
+}
+
 .App-overflow {
   background: #dff2f7;
 }
