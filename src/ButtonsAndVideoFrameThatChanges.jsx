@@ -224,7 +224,7 @@ constructor(props){
                             {this.state.shouldBeHidden? null: <ButtonWithIframe text="Close embedded page" variant="danger" onClickFunc={() => this.hideEmbeddedPage() }/> }
                         </div>
                         {this.state.shouldBeHidden? null : <Iframe url={this.state.urlToDisplayInFrame}
-                        width="1080px" height="720px" display="initial" position="relative"/> }
+                        className="iframe"/> }
                     </div>
                     </BrowserView>
                 </div>

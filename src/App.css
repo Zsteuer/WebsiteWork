@@ -147,6 +147,15 @@
   width: 100%;
 }
 
+.iframe{
+  height: 720px;
+  display: initial;
+  position: relative;
+  width: 100%;
+  max-width: 1080px !important;
+  margin: auto;
+}
+
 .floatontop{
   z-index: 9999;
 }
